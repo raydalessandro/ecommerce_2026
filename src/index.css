@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  /* Product Card Variants */
+  .product-card-minimal {
+    @apply bg-white border border-gray-200 rounded-none overflow-hidden transition-all duration-300 hover:shadow-card;
+  }
+  
+  .product-card-warm {
+    @apply bg-warm-bg border border-warm-muted/20 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-soft;
+  }
+  
+  .product-card-urban {
+    @apply bg-urban-bg border-2 border-urban-primary rounded-none overflow-hidden transition-all duration-300 hover:scale-[1.02];
+  }
+  
+  .product-card-premium {
+    @apply bg-white border border-premium-muted/30 rounded-sm overflow-hidden transition-all duration-500 hover:shadow-premium;
+  }
+
+  /* Button Variants */
+  .btn-minimal {
+    @apply px-6 py-3 bg-minimal-primary text-white font-medium uppercase tracking-wider hover:bg-minimal-secondary transition-colors;
+  }
+  
+  .btn-warm {
+    @apply px-6 py-3 bg-warm-primary text-white font-medium rounded-full hover:bg-warm-secondary transition-all shadow-md hover:shadow-lg;
+  }
+  
+  .btn-urban {
+    @apply px-8 py-4 bg-urban-primary text-urban-bg font-bold uppercase tracking-widest hover:bg-urban-accent hover:text-urban-bg transition-all;
+  }
+  
+  .btn-premium {
+    @apply px-8 py-3 bg-premium-primary text-white font-display font-semibold border-2 border-premium-secondary hover:bg-premium-secondary hover:text-premium-primary transition-all;
+  }
+
+  /* Price Tag Variants */
+  .price-minimal {
+    @apply text-2xl font-bold text-minimal-primary;
+  }
+  
+  .price-warm {
+    @apply text-xl font-semibold text-warm-primary;
+  }
+  
+  .price-urban {
+    @apply text-3xl font-black text-urban-accent;
+  }
+  
+  .price-premium {
+    @apply text-2xl font-display font-bold text-premium-secondary;
+  }
+
+  /* Badge Variants */
+  .badge-minimal {
+    @apply inline-block px-3 py-1 bg-minimal-accent text-white text-xs font-medium uppercase tracking-wide;
+  }
+  
+  .badge-warm {
+    @apply inline-block px-4 py-1 bg-warm-accent text-warm-text text-sm font-medium rounded-full;
+  }
+  
+  .badge-urban {
+    @apply inline-block px-4 py-2 bg-urban-accent text-urban-bg text-sm font-bold uppercase;
+  }
+  
+  .badge-premium {
+    @apply inline-block px-3 py-1 border border-premium-secondary text-premium-secondary text-xs font-medium uppercase tracking-widest;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Image lazy load effect */
+img {
+  @apply transition-opacity duration-300;
+}
+
+img[loading="lazy"] {
+  @apply opacity-0;
+}
+
+img[loading="lazy"].loaded {
+  @apply opacity-100;
+}
